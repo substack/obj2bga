@@ -13,5 +13,15 @@
     "regl": "^1.3.0",
     "regl-camera": "^2.1.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "ssb://%7zEEUg6c/JBmDySo9s8RQSAZ1MWGHbkvrsGyZeLH8lE=.sha256"
+  },
+  "keywords": [
+    "3d",
+    "webgl",
+    "obj",
+    "bga"
+  ],
   "license": "BSD"
 }

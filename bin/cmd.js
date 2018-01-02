@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 var obj2bga = require('../')
 var fs = require('fs')
+var path = require('path')
 var concat = require('concat-stream')
 
 var minimist = require('minimist')

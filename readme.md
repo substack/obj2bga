@@ -4,10 +4,26 @@ convert an OBJ file to [BGA][]
 
 [BGA]: https://substack.neocities.org/bga.html
 
+# example
+
+```
+$ obj2bga teapot.obj > teapot.bga
+```
+
+api:
+
+``` js
+var obj2bga = require('obj2bga')
+var fs = require('fs')
+
+var objdata = fs.readFileSync(process.argv[2], 'utf8')
+process.stdout.write(Buffer.from(obj2bga(objdata)))
+```
+
 # usage
 
 ```
-obj2bga OPTIONS < INFILE.obj > OUTFILE.bga
+obj2bga {OPTIONS} INFILE.obj > OUTFILE.bga
 
 Read an obj file from stdin or a file path and produce a BGA
 file as output with these buffers:

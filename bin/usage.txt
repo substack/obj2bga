@@ -1,4 +1,4 @@
-obj2bga OPTIONS < INFILE.obj > OUTFILE.bga
+obj2bga {OPTIONS} INFILE.obj > OUTFILE.bga
 
 Read an obj file from stdin or a file path and produce a BGA
 file as output with these buffers:

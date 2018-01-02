@@ -1,0 +1,17 @@
+{
+  "name": "obj2bga",
+  "version": "1.0.0",
+  "bin": "bin/cmd.js",
+  "dependencies": {
+    "angle-normals": "^1.0.0",
+    "concat-stream": "^1.6.0",
+    "defined": "^1.0.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "parse-bga-mesh": "^2.0.0",
+    "regl": "^1.3.0",
+    "regl-camera": "^2.1.1"
+  },
+  "license": "BSD"
+}

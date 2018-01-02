@@ -3,6 +3,17 @@ var defined = require('defined')
 var missing3 = [NaN,NaN,NaN]
 var anormals = require('angle-normals')
 
+var alias = {
+  position: 'vertex.position',
+  positions: 'vertex.position',
+  normal: 'vertex.normal',
+  normals: 'vertex.normal',
+  texcoord: 'vertex.texcoord',
+  texcoords: 'vertex.texcoord',
+  cell: 'triangle.cell',
+  cells: 'triangle.cell'
+}
+
 module.exports = function (obj, opts) {
   if (!opts) opts = {}
   var lines = obj.split('\n')
@@ -86,6 +97,9 @@ module.exports = function (obj, opts) {
       }
     }
   }
+  var bufnames = opts.buffers && opts.buffers.map(function (bufname) {
+    return alias[bufname]
+  })
   return createBGA({
     endian: opts.endian || 'little',
     buffers: [
@@ -93,6 +107,8 @@ module.exports = function (obj, opts) {
       { type: 'vec3', name: 'vertex.normal', data: mesh.normals },
       { type: 'vec3', name: 'vertex.texcoord', data: mesh.texcoords },
       { type: 'uint32[3]', name: 'triangle.cell', data: mesh.cells }
-    ]
+    ].filter(function (buffer) {
+      return bufnames ? bufnames.indexOf(buffer.name) >= 0 : true
+    })
   })
 }
